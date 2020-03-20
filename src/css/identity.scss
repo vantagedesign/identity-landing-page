@@ -1,0 +1,246 @@
+/* -------------------------------------------------------------------------
+*	IDENTITY LANDING PAGE | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
+*	Stylesheet.
+* ------------------------------------------------------------------------ */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../webfonts/Poppins-Bold.eot');
+    src: url('../webfonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/Poppins-Bold.woff2') format('woff2'),
+        url('../webfonts/Poppins-Bold.woff') format('woff'),
+        url('../webfonts/Poppins-Bold.ttf') format('truetype'),
+        url('../webfonts/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../webfonts/Poppins-Regular.eot');
+    src: url('../webfonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/Poppins-Regular.woff2') format('woff2'),
+        url('../webfonts/Poppins-Regular.woff') format('woff'),
+        url('../webfonts/Poppins-Regular.ttf') format('truetype'),
+        url('../webfonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Load Bootstrap */
+$primary: #e67e22;
+$dark: #3f3d56;
+
+$border-radius: 3px;
+
+$enable-responsive-font-sizes: true;
+
+@import "../plugins/bootstrap/scss/bootstrap";
+
+$font-family-paragraphs: $font-family-sans-serif;
+$font-family-headings: 'Poppins', $font-family-sans-serif;
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+	color: $dark;
+	font-family: $font-family-headings;
+	font-weight: 800;
+	margin-bottom: 0;
+}
+
+.vh-100{
+	height: 100vh !important;
+	height: calc(var(--vh, 1vh) * 100) !important;	
+}
+
+.btn-scroller{
+	border-width: 2px;
+	height: 50px;
+	line-height:30px;
+	transition: all 0.2s ease;
+	&:hover{
+		transform: translateY(5px);
+	}
+}
+
+.dot{
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	&:before{
+		display: inline-block;
+		position: relative;
+		content: '';
+		background-color: $primary;
+		height: 12px;
+		width: 12px;
+		margin-left: 2px;
+		border-radius: 100%;
+	}
+}
+
+
+.navbar-light .navbar-nav .nav-link{
+	color: $dark;
+	&:hover{
+		color: $dark;
+	}
+}
+
+.navbar{
+	.nav-link{
+		position: relative;
+		margin: 0 5px;
+		display: inline-block;
+		padding-left: 5px !important;
+		opacity: 1;
+		&:before{
+			display: inline-block;
+			position: absolute;
+			content: '';
+			background-color: $primary;
+			height: 0;
+			width: 0;
+			left: 2px;
+			bottom: 17px;
+			border-radius: 100%;
+			transition: all 0.2s ease-out;
+		}
+		&:hover{
+			&:before{
+				left: -1px;
+				bottom: 14px;
+				height: 6px;
+				width: 6px;
+			}
+		}
+	}
+	.nav-link, .navbar-brand{
+		color: $dark;
+		font-family: $font-family-headings;
+	}
+}
+
+/* Styling for making background and shadow visible on scroll */
+.navbar-scrollstyle{
+	transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+	.navbar-nav{
+		transition: all 0.15s ease-out;
+	}
+	&:not(.scrolled):not(.show){
+		background-color: transparent !important;
+		box-shadow: none !important;
+		.navbar-nav{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+/* Animated navbar toggler, transforming from a hamburger to an X */
+.navbar-toggler{
+	border:none;
+	& > .navbar-toggler-icon{
+		position: relative;
+		background-image: none !important;
+		background: transparent;
+		height: 3px;
+		width: 18px;
+		&:before, &:after{
+			background: $dark;
+			content: '';
+			display: block;
+			height: 100%;
+			position: absolute;
+			transition: all 0.15s ease-out;
+			width: 100%;
+		}
+		&:before{
+			top: 0;
+			transform: rotate(45deg);
+		}
+		&:after{
+			top: 0;
+			transform: rotate(-45deg);
+		}
+	}
+	&.collapsed{
+		.navbar-toggler-icon{
+			background-image: none !important;
+			background: $dark;
+			&:before{
+				top: -6px;
+				transform: none;
+			}
+			&:after{
+				top: 6px;
+				transform: none;
+			}
+		}
+		&:hover{
+			& > .navbar-toggler-icon:before{
+				top: -8px;
+			}
+			& > .navbar-toggler-icon:after{
+				top: 8px;
+			}
+		}
+	}
+}
+
+.btn{
+	font-family: $font-family-headings;
+}
+
+#typed{
+	color: $primary;
+}
+
+.hero-drawing{
+	display: flex;
+	max-height: 400px;
+	max-width: 50%;
+	height: auto;
+	width: auto;
+}
+
+.ball{
+	position: absolute;
+	width: 200px;
+	height:200px;
+	right: -100px;
+	top: 100px;
+	border-radius: 100%;
+	background-color: $primary;
+	&.ball-alt{
+		width:110px;
+		height:110px;
+		top: initial;
+		left: initial;
+		left: -40px;
+		bottom: 55px;
+	}
+}
+
+.backdrop{
+	position: relative;
+	z-index: 1;
+	border-radius: 6px;
+	img{
+		border-radius: inherit;
+	}
+	&:before{
+		position: absolute;
+		display: block;
+		content: '';
+		height: 100%;
+		width: 100%;
+		background-color: $primary;
+		border-radius: inherit;
+		bottom: -7px;
+		right: -7px;
+		z-index: -1;
+	}
+	&.card{
+		z-index: initial;
+	}
+}
