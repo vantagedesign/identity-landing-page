@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*	IDENTITY LANDING PAGE | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
+*	IDENTITY LANDING PAGE | @version 1.0.1 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
 *	Stylesheet.
 * ------------------------------------------------------------------------ */
 @font-face {
@@ -8437,6 +8437,17 @@ h1, h2, h3, h4, h5, h6,
 .navbar .nav-link, .navbar .navbar-brand {
   color: #3f3d56;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+/* Styling for making background and shadow visible on collapse */
+.navbar-transparent {
+  -webkit-transition: background-color 0.15 ease-out, -webkit-box-shadow 0.15 ease-out;
+  transition: background-color 0.15 ease-out, -webkit-box-shadow 0.15 ease-out;
+  transition: background-color 0.15 ease-out, box-shadow 0.15 ease-out;
+  transition: background-color 0.15 ease-out, box-shadow 0.15 ease-out, -webkit-box-shadow 0.15 ease-out; }
+  .navbar-transparent:not(.show) {
+    background-color: transparent !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important; }
 
 /* Styling for making background and shadow visible on scroll */
 .navbar-scrollstyle {

@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*	IDENTITY LANDING PAGE | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
+*	IDENTITY LANDING PAGE | @version 1.0.1 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
 *	Stylesheet.
 * ------------------------------------------------------------------------ */
 
@@ -117,6 +117,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 	.nav-link, .navbar-brand{
 		color: $dark;
 		font-family: $font-family-headings;
+	}
+}
+
+/* Styling for making background and shadow visible on collapse */
+.navbar-transparent{
+	transition: background-color 0.15 ease-out, box-shadow 0.15 ease-out;
+	&:not(.show){
+		background-color: transparent !important;
+		box-shadow: none !important;
 	}
 }
 
