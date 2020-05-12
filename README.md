@@ -1,6 +1,6 @@
 # [Identity landing page](https://docs.vantage-design.com/identity/demo)
 
-![Product thumbnail](https://github.com/vantagedesign/assets/blob/master/identity-landing-page/identity-thumbnail-shadow.png)
+![Product thumbnail](https://raw.githubusercontent.com/vantagedesign/assets/master/identity-landing-page/identity-thumbnail-shadow.png)
 
 
 Identity is a landing page template aimed at agencies or businesses who wish to introduce their work and people, and try to get in touch with customers. It offers a minimalistic and modern design, and features animated text in the hero section as an eyecatcher and introduction to the business. Beautiful vector illustrations are included to convey extra meaning to the visitor and to radiate a modern, open and friendly business philisophy. Open source, built with Bootstrap 4 and powered by a powerful GulpJS workfow, it is highly customizable. 
