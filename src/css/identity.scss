@@ -1,8 +1,9 @@
 /* -------------------------------------------------------------------------
-*	IDENTITY LANDING PAGE | @version 1.0.1 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
+*	IDENTITY LANDING PAGE | @version 1.0.2 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
 *	Stylesheet.
 * ------------------------------------------------------------------------ */
 
+/* Import font */
 @font-face {
     font-family: 'Poppins';
     src: url('../webfonts/Poppins-Bold.eot');
@@ -27,7 +28,7 @@
     font-style: normal;
 }
 
-/* Load Bootstrap */
+/* Set variables & load Bootstrap */
 $primary: #e67e22;
 $dark: #3f3d56;
 
@@ -45,6 +46,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 	font-family: $font-family-headings;
 	font-weight: 800;
 	margin-bottom: 0;
+}
+
+/* Improve animation performance */
+.collapse, .collapsing{
+	will-change: height;
 }
 
 .vh-100{
@@ -155,42 +161,40 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 		height: 3px;
 		width: 18px;
 		&:before, &:after{
-			background: $dark;
+			background: $light;
 			content: '';
 			display: block;
 			height: 100%;
 			position: absolute;
-			transition: all 0.15s ease-out;
+			top: 0;
+			transition: transform 0.15s ease-out;
+			will-change: transform;
 			width: 100%;
 		}
 		&:before{
-			top: 0;
-			transform: rotate(45deg);
+			transform: rotate(45deg) translateY(0);
 		}
 		&:after{
-			top: 0;
-			transform: rotate(-45deg);
+			transform: rotate(-45deg) translateY(0);
 		}
 	}
 	&.collapsed{
 		.navbar-toggler-icon{
 			background-image: none !important;
-			background: $dark;
+			background: $light;
 			&:before{
-				top: -6px;
-				transform: none;
+				transform: translateY(-6px);
 			}
 			&:after{
-				top: 6px;
-				transform: none;
+				transform: translateY(6px);
 			}
 		}
 		&:hover{
 			& > .navbar-toggler-icon:before{
-				top: -8px;
+				transform: translateY(-8px);
 			}
 			& > .navbar-toggler-icon:after{
-				top: 8px;
+				transform: translateY(8px);
 			}
 		}
 	}

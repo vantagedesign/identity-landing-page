@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*	IDENTITY LANDING PAGE | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
+*	IDENTITY LANDING PAGE | @version 1.0.2 | @author Vantage Design | @license https://github.com/vantagedesign/identity-landing-page/blob/master/LICENSE.md
 *	Gulpfile.
 * ------------------------------------------------------------------------ */
 
